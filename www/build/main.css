@@ -25695,3 +25695,46 @@ ion-navbar.toolbar {
   padding-bottom: 4px;
   min-height: 46px;
 }
+
+.toolbar-background {
+  background-color: #081c24;
+}
+
+.navbar img {
+  width: 15%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ion-card.card.card-md {
+  width: 98%;
+  margin: 3px;
+}
+
+.button.back-button.disable-hover.bar-button.bar-button-md.back-button-md.bar-button-default.bar-button-default-md.show-back-button {
+  color: white;
+}
+
+.toolbar-title.toolbar-title-md {
+  color: white;
+}
+
+.tabbar.show-tabbar {
+  background: -webkit-gradient(linear, left bottom, right top, from(#2455a9), to(#00d573));
+  background: linear-gradient(to top right, #2455a9, #00d573);
+}
+
+.tabs-md .tab-button {
+  min-height: 5.6rem;
+  font-weight: normal;
+  color: #ffffff;
+  padding: 0;
+}
+
+.tabs-md .tab-button-icon {
+  margin-top: 1px;
+  min-width: 2.4rem;
+  font-size: 2.4rem;
+  color: #ffffff;
+}

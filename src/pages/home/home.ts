@@ -3,7 +3,6 @@ import {IonicPage, NavController, LoadingController, NavParams } from 'ionic-ang
 import { MovieProvider } from '../../providers/movie/movie';
 import { MovieDetailPage } from '../movie-detail/movie-detail';
 
-// @IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',

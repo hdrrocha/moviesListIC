@@ -5,12 +5,12 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <ion-title>Feed</ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar class="navbar">
+      <img class="center_cropped" src="assets/images/title.svg">
+    </ion-navbar>
+  </ion-header>
 
-<ion-content padding>
+<ion-content >
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
