@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import 'rxjs/add/operator/map';
 /*
   Generated class for the MovieProvider provider.
 
@@ -15,12 +15,20 @@ export class MovieProvider {
     console.log('Hello MovieProvider Provider');
   }
 
-  getLatestMovies(page = 1){
+  getPopularMovies(page = 1){
       return this.http.get(this.baseApiPath + `/movie/popular?page=${page}&api_key=` + this.getApiKey());
   }
 
-  getMovieDetails(filmeid){
-    return this.http.get(this.baseApiPath + `/movie/${filmeid}?api_key=` + this.getApiKey());
+  getLatestMovies(page = 1){
+    return this.http.get(this.baseApiPath + `/movie/latest?page=${page}&api_key=` + this.getApiKey());
+  }
+  
+  getTopRatedMovies(page = 1){
+    return this.http.get(this.baseApiPath + `/movie/top_rated?page=${page}&api_key=` + this.getApiKey());
+  }
+  
+  getMovieDetails(movieId){
+    return this.http.get(this.baseApiPath + `/movie/${movieId}?api_key=` + this.getApiKey());
   }
 
   getApiKey(): string{

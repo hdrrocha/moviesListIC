@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { MovieProvider } from '../../providers/movie/movie';
+import { MovieDetailPage } from '../movie-detail/movie-detail';
 
 /**
  * Generated class for the FeedPage page.
@@ -28,29 +29,76 @@ export class FeedPage {
 }
   public page = 1;
   public movies_list = new Array<any>();
+
+  public loader;
+  public refresher;
+  public isRefreshing: boolean = false;
+  public infiniteScroll;
+
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    private movieProvider: MovieProvider
+    private movieProvider: MovieProvider,
+    public loadingCtrl: LoadingController
     ) {
 }
   ionViewDidLoad() {
     console.log('ionViewDidLoad FeedPage');
+  }
+
+  ionViewDidEnter() {
     this.loadMovies(true);
   }
 
+  doRefresh(refresher) {
+    this.refresher = refresher;
+    this.isRefreshing = true;
+
+    this.loadMovies();
+  }
+
+  doInfinite(infiniteScroll) {
+    this.page++;
+    this.infiniteScroll = infiniteScroll;
+    this.loadMovies(true);
+  }
+
+  closeLoad(){
+    this.loader.dismiss();
+  }
+
+  initLoading() {
+    this.loader = this.loadingCtrl.create({
+      content: "Carregando filmes..."
+    });
+    this.loader.present();
+  }
+
+  goToDetail(movie) {
+    this.navCtrl.push(MovieDetailPage, {id: movie.id});
+  }
+
   loadMovies(newpage: boolean = false){
-  
-    this.movieProvider.getLatestMovies(this.page).subscribe(
+    this.initLoading();
+    this.movieProvider.getPopularMovies(this.page).subscribe(
       data =>{
           const response = (data as any);
           console.log(response.results);
-          // const objeto_retorno = JSON.parse(response.results);
+          
+          if(newpage){
+            this.movies_list =  this.movies_list.concat(response.results)
+              console.log(this.page);
+              console.log(this.movies_list);
+              
+            }else{
+              this.movies_list = response.results;
+            }
 
-          this.movies_list =  this.movies_list.concat(response.results)
-
-          console.log(this.page);
-          console.log(this.movies_list);
+            this.closeLoad();
+            if(this.isRefreshing){
+                this.refresher.complete();
+                this.isRefreshing = false;
+      }
           
       }, error => {
           console.log(error);

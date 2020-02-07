@@ -5,13 +5,45 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card *ngFor="let movie of movies_list">
+    <ion-item>
+      <ion-avatar item-start >
+        <img class="center_cropped" src="assets/images/avatar.jpg">
+      </ion-avatar>
+      <h2 class="feed_title">{{ movie.original_title }}</h2>
+      <p class="feed_date">{{ movie.release_date }}</p>
+    </ion-item>
+    <img [src]="'https://image.tmdb.org/t/p/w300/' + movie.backdrop_path">
+    <ion-card-content>
+      <p>{{ movie.overview }}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>{{ objeto_feed.qntd_likes }} Likes</div>
+      </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>{{ objeto_feed.qntd_comments }} Comments</div>
+      </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          {{ objeto_feed.time_comment }}
+        </ion-note>
+      </ion-col>
+    </ion-row>
+    <button ion-button block (click)="goToDetail(movie)">Detalhes</button>
+  </ion-card> 
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

@@ -5,15 +5,15 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title>Feed</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-card *ngFor="let movie of movies_list">
     <ion-item>
       <ion-avatar item-start >
@@ -22,9 +22,7 @@
       <h2 class="feed_title">{{ movie.original_title }}</h2>
       <p class="feed_date">{{ movie.release_date }}</p>
     </ion-item>
-
     <img [src]="'https://image.tmdb.org/t/p/w300/' + movie.backdrop_path">
-
     <ion-card-content>
       <p>{{ movie.overview }}</p>
     </ion-card-content>
@@ -48,7 +46,10 @@
         </ion-note>
       </ion-col>
     </ion-row>
-    <button ion-button block (click)="abrirDetalhes(filme)">Detalhes</button>
+    <button ion-button block (click)="goToDetail(movie)">Detalhes</button>
   </ion-card> 
 
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
