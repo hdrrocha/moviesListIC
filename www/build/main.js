@@ -22,7 +22,8 @@ webpackEmptyAsyncContext.id = 110;
 
 var map = {
 	"../pages/feed/feed.module": [
-		152
+		152,
+		2
 	],
 	"../pages/intro/intro.module": [
 		153
@@ -41,44 +42,6 @@ webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 };
 webpackAsyncContext.id = 151;
 module.exports = webpackAsyncContext;
-
-/***/ }),
-
-/***/ 152:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FeedPageModule", function() { return FeedPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__feed__ = __webpack_require__(77);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var FeedPageModule = /** @class */ (function () {
-    function FeedPageModule() {
-    }
-    FeedPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__feed__["a" /* FeedPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__feed__["a" /* FeedPage */]),
-            ],
-        })
-    ], FeedPageModule);
-    return FeedPageModule;
-}());
-
-//# sourceMappingURL=feed.module.js.map
 
 /***/ }),
 
@@ -236,9 +199,10 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_tabs_tabs__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__ = __webpack_require__(195);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_intro_intro_module__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_feed_feed__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_feed_feed_module__ = __webpack_require__(152);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_common_http__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_intro_intro_module__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_feed_feed__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_movie_movie__ = __webpack_require__(274);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -256,6 +220,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+// import { FeedPageModule } from '../pages/feed/feed.module';
+
 
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -266,7 +232,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_4__pages_contact_contact__["a" /* ContactPage */],
                 __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_tabs_tabs__["a" /* TabsPage */]
+                __WEBPACK_IMPORTED_MODULE_6__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_feed_feed__["a" /* FeedPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
@@ -276,8 +243,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/intro/intro.module#IntroPageModule', name: 'IntroPage', segment: 'intro', priority: 'low', defaultHistory: [] }
                     ]
                 }),
-                __WEBPACK_IMPORTED_MODULE_9__pages_intro_intro_module__["IntroPageModule"],
-                __WEBPACK_IMPORTED_MODULE_11__pages_feed_feed_module__["FeedPageModule"]
+                __WEBPACK_IMPORTED_MODULE_10__pages_intro_intro_module__["IntroPageModule"],
+                __WEBPACK_IMPORTED_MODULE_9__angular_common_http__["b" /* HttpClientModule */],
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
             entryComponents: [
@@ -285,12 +252,13 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_4__pages_contact_contact__["a" /* ContactPage */],
                 __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */],
                 __WEBPACK_IMPORTED_MODULE_6__pages_tabs_tabs__["a" /* TabsPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_feed_feed__["a" /* FeedPage */]
+                __WEBPACK_IMPORTED_MODULE_11__pages_feed_feed__["a" /* FeedPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
+                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
+                __WEBPACK_IMPORTED_MODULE_12__providers_movie_movie__["a" /* MovieProvider */]
             ]
         })
     ], AppModule);
@@ -386,13 +354,13 @@ var ContactPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 77:
+/***/ 274:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FeedPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MovieProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -404,6 +372,59 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+/*
+  Generated class for the MovieProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var MovieProvider = /** @class */ (function () {
+    function MovieProvider(http) {
+        this.http = http;
+        this.baseApiPath = "https://api.themoviedb.org/3";
+        console.log('Hello MovieProvider Provider');
+    }
+    MovieProvider.prototype.getLatestMovies = function (page) {
+        if (page === void 0) { page = 1; }
+        return this.http.get(this.baseApiPath + ("/movie/popular?page=" + page + "&api_key=") + this.getApiKey());
+    };
+    MovieProvider.prototype.getMovieDetails = function (filmeid) {
+        return this.http.get(this.baseApiPath + ("/movie/" + filmeid + "?api_key=") + this.getApiKey());
+    };
+    MovieProvider.prototype.getApiKey = function () {
+        return "537efd456d89df3e3b125310d8039acd";
+    };
+    MovieProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+    ], MovieProvider);
+    return MovieProvider;
+}());
+
+//# sourceMappingURL=movie.js.map
+
+/***/ }),
+
+/***/ 77:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FeedPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_movie_movie__ = __webpack_require__(274);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
 /**
  * Generated class for the FeedPage page.
  *
@@ -411,20 +432,49 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var FeedPage = /** @class */ (function () {
-    function FeedPage(navCtrl, navParams) {
+    function FeedPage(navCtrl, navParams, movieProvider) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.nome_usuario = "Hedie Rocha =P";
+        this.movieProvider = movieProvider;
+        this.objeto_feed = {
+            titulo: "Hédie Rocha",
+            data: "Janeiro 11, 1992",
+            descricao: "Programador, desehador e leitor...",
+            qntd_likes: 12,
+            qntd_comments: 4,
+            time_comment: "11h ago teste"
+        };
+        this.page = 1;
+        this.movies_list = new Array();
     }
     FeedPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad FeedPage');
+        this.loadMovies(true);
+    };
+    FeedPage.prototype.loadMovies = function (newpage) {
+        var _this = this;
+        if (newpage === void 0) { newpage = false; }
+        this.movieProvider.getLatestMovies(this.page).subscribe(function (data) {
+            var response = data;
+            console.log(response.results);
+            // const objeto_retorno = JSON.parse(response.results);
+            _this.movies_list = _this.movies_list.concat(response.results);
+            console.log(_this.page);
+            console.log(_this.movies_list);
+        }, function (error) {
+            console.log(error);
+        });
     };
     FeedPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-feed',template:/*ion-inline-start:"/home/hedie/dev/moviesListIC/src/pages/feed/feed.html"*/'<!--\n  Generated template for the FeedPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Feed</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-card >\n    <ion-item>\n      <ion-avatar item-start >\n        <img class="center_cropped" src="assets/imgs/avatar.jpg">\n      </ion-avatar>\n      <h2 class="feed_title">{{nome_usuario}}</h2>\n      <p class="feed_date">Julho de 2020</p>\n    </ion-item>\n\n    <img src="assets/imgs/feed-image.jpg">\n\n    <ion-card-content>\n      <p>Tituloteste</p>\n    </ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <button ion-button icon-left clear small>\n        <ion-icon name="thumbs-up"></ion-icon>\n        <div>Likes</div>\n      </button>\n      </ion-col>\n      <ion-col>\n        <button ion-button icon-left clear small>\n        <ion-icon name="text"></ion-icon>\n        <div>Comments</div>\n      </button>\n      </ion-col>\n      <ion-col center text-center>\n        <ion-note>\n          objeto_feed.time_comment \n        </ion-note>\n      </ion-col>\n    </ion-row>\n    <button ion-button block (click)="abrirDetalhes(filme)">Detalhes</button>\n  </ion-card> \n\n</ion-content>'/*ion-inline-end:"/home/hedie/dev/moviesListIC/src/pages/feed/feed.html"*/,
+            selector: 'page-feed',template:/*ion-inline-start:"/home/hedie/dev/moviesListIC/src/pages/feed/feed.html"*/'<!--\n  Generated template for the FeedPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Feed</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-card *ngFor="let movie of movies_list">\n    <ion-item>\n      <ion-avatar item-start >\n        <img class="center_cropped" src="assets/images/avatar.jpg">\n      </ion-avatar>\n      <h2 class="feed_title">{{ movie.original_title }}</h2>\n      <p class="feed_date">{{ movie.release_date }}</p>\n    </ion-item>\n\n    <img [src]="\'https://image.tmdb.org/t/p/w300/\' + movie.backdrop_path">\n\n    <ion-card-content>\n      <p>{{ movie.overview }}</p>\n    </ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <button ion-button icon-left clear small>\n        <ion-icon name="thumbs-up"></ion-icon>\n        <div>{{ objeto_feed.qntd_likes }} Likes</div>\n      </button>\n      </ion-col>\n      <ion-col>\n        <button ion-button icon-left clear small>\n        <ion-icon name="text"></ion-icon>\n        <div>{{ objeto_feed.qntd_comments }} Comments</div>\n      </button>\n      </ion-col>\n      <ion-col center text-center>\n        <ion-note>\n          {{ objeto_feed.time_comment }}\n        </ion-note>\n      </ion-col>\n    </ion-row>\n    <button ion-button block (click)="abrirDetalhes(filme)">Detalhes</button>\n  </ion-card> \n\n</ion-content>'/*ion-inline-end:"/home/hedie/dev/moviesListIC/src/pages/feed/feed.html"*/,
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_2__providers_movie_movie__["a" /* MovieProvider */]
+            ]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_movie_movie__["a" /* MovieProvider */]])
     ], FeedPage);
     return FeedPage;
 }());
