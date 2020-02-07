@@ -1,0 +1,54 @@
+<!--
+  Generated template for the FeedPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Feed</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card >
+    <ion-item>
+      <ion-avatar item-start >
+        <img class="center_cropped" src="assets/imgs/avatar.jpg">
+      </ion-avatar>
+      <h2 class="feed_title">{{nome_usuario}}</h2>
+      <p class="feed_date">Julho de 2020</p>
+    </ion-item>
+
+    <img src="assets/imgs/feed-image.jpg">
+
+    <ion-card-content>
+      <p>Tituloteste</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>Likes</div>
+      </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>Comments</div>
+      </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          objeto_feed.time_comment 
+        </ion-note>
+      </ion-col>
+    </ion-row>
+    <button ion-button block (click)="abrirDetalhes(filme)">Detalhes</button>
+  </ion-card> 
+
+</ion-content>
