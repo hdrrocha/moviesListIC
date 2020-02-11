@@ -13,12 +13,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { IntroPageModule } from '../pages/intro/intro.module';
-// import { FeedPageModule } from '../pages/feed/feed.module';
+import { AddMoviesPage } from '../pages/add-movies/add-movies';
 import { FeedPage } from '../pages/feed/feed';
 
 import { MovieProvider } from '../providers/movie/movie';
-import { MovieDetailPage } from '../pages/movie-detail/movie-detail';
+// import { MovieDetailPage } from '../pages/movie-detail/movie-detail';
 import { MovieDetailPageModule } from '../pages/movie-detail/movie-detail.module';
+// import { AddMoviesPageModule } from '../pages/add-movies/add-movies.module';
+import { ConfigProvider } from '../providers/config/config';
+
+
 
 
 
@@ -29,6 +33,7 @@ import { MovieDetailPageModule } from '../pages/movie-detail/movie-detail.module
     HomePage,
     TabsPage,
     FeedPage,
+    AddMoviesPage
     // MovieDetailPage
   ],
   imports: [
@@ -36,7 +41,8 @@ import { MovieDetailPageModule } from '../pages/movie-detail/movie-detail.module
     IonicModule.forRoot(MyApp),
     IntroPageModule,
     HttpClientModule,
-    MovieDetailPageModule
+    MovieDetailPageModule,
+    // AddMoviesPageModule
     // FeedPageModule
   ],
   bootstrap: [IonicApp],
@@ -46,13 +52,15 @@ import { MovieDetailPageModule } from '../pages/movie-detail/movie-detail.module
     HomePage,
     TabsPage,
     FeedPage,
+    AddMoviesPage
     // MovieDetailPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MovieProvider
+    MovieProvider,
+    ConfigProvider
   ]
 })
 export class AppModule {}

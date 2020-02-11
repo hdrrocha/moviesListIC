@@ -58,6 +58,7 @@ export class FeedPage {
   }
 
   doInfinite(infiniteScroll) {
+    console.log("doInfinite")
     this.page++;
     this.infiniteScroll = infiniteScroll;
     this.loadMovies(true);

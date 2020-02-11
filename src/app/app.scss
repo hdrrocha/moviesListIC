@@ -38,7 +38,7 @@ ion-card.card.card-md {
     color: white;
 }
 .tabbar.show-tabbar {
-    background: linear-gradient(to top right, #2455a9, #00d573);
+    background:  #081c24;
 }
 
 .tabs-md .tab-button {
@@ -53,4 +53,77 @@ ion-card.card.card-md {
     min-width: 2.4rem;
     font-size: 2.4rem;
     color: #ffffff;
+}
+
+
+element.style {
+}
+.tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text {
+    margin-top: 4px;
+    margin-bottom: 0;
+}
+.tabs-md .tab-button[aria-selected=true] .tab-button-text {
+    -webkit-transform: scale3d(1.16667, 1.16667, 1);
+    transform: scale3d(1.16667, 1.16667, 1);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+.tabs-md .tab-button-text {
+    font-size: 1.2rem;
+    text-transform: none;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    margin: 0;
+    -webkit-transform-origin: 50% 80%;
+    transform-origin: 50% 80%;
+}
+.has-icon .tab-button-icon, .has-title .tab-button-text {
+    display: block;
+}
+.tab-button-text, .tab-button-icon {
+    display: none;
+    overflow: hidden;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    min-width: 26px;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.tab-button-text {
+    margin-top: 3px;
+    margin-bottom: 2px;
+}
+a, a div, a span, a ion-icon, a ion-label, button, button div, button span, button ion-icon, button ion-label, [tappable], [tappable] div, [tappable] span, [tappable] ion-icon, [tappable] ion-label, input, textarea {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+.tabs-md .tab-button[aria-selected=true] {
+    color: #00d573;
+    padding: 0;
+}
+
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon{
+    color: #00d573;
+}
+
+.span.button-inner{
+    color: #00d573;
+}
+
+.button-clear-md {
+    color: #2ec95c;
 }
